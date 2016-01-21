@@ -10,5 +10,12 @@ var numberToWord = function(userSentence) {
 };
 
 var wordPuzzler = function(userSentence) {
-  return numberToWord(userSentence).replace(/[aeiouy]/gi, '-');
+  userSentence = numberToWord(userSentence); // change numbers to words
+  var vowels = ['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y' ];
+  for (var index = 0; index < vowels.length; index++) {// loop through vowels array
+    while(userSentence.indexOf(vowels[index]) >= 0) { // check sentence for current vowel
+      userSentence = userSentence.replace(vowels[index], '-'); // replace the vowel with a dash
+    }
+  }
+  return userSentence;
 };
