@@ -6,4 +6,8 @@ describe('wordPuzzler', function() {
   it('will replace vowels in upper and lower case', function() {
     expect(wordPuzzler('ThIs is thE best sEntEnce plAce')).to.equal('Th-s -s th- b-st s-nt-nc- pl-c-');
   });
+
+  it('will ignore blank strings', function() {
+    expect(wordPuzzler('')).to.equal('');
+  });
 });
