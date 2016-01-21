@@ -2,13 +2,18 @@ var numberToWord = function(number) {
   var singleDigit = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
   var teenDigits = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
   var tens = ['twenty', 'thirty', 'fourty', 'fifty', 'sixty' ,'seventy', 'eighty', 'ninety'];
+  var hundredText = ' hundred and ';
   var output = '';
   if(number > 10) {
     if(number < 20) {// teens
       output = teenDigits[number-10];
     } else { // twenty plus
       var numArray = number.toString().split('');
-      output = tens[parseInt(numArray[0])-2] + ' ' + singleDigit[parseInt(numArray[1])];
+      if(number > 99) { //hundred!
+        var hundredthPlace = numArray.shift();
+        output += singleDigit[hundredthPlace] + hundredText;
+      }
+      output += tens[parseInt(numArray[0])-2] + ' ' + singleDigit[parseInt(numArray[1])];
     }
     // break it up
 
