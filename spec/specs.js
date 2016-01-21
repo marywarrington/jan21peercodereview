@@ -10,4 +10,11 @@ describe('wordPuzzler', function() {
   it('will ignore blank strings', function() {
     expect(wordPuzzler('')).to.equal('');
   });
+
+});
+
+describe('numberToWord', function() {
+  it('will turn numbers into the word of the number', function() {
+    expect(wordPuzzler(4)).to.equal('four');
+  });
 });
