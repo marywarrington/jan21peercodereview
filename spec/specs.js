@@ -21,4 +21,7 @@ describe('numberToWord', function() {
   it('will turn teen digit numbers into the word of the number', function() {
     expect(numberToWord(12)).to.equal('twelve');
   });
+  it('will handle digits less than 100', function() {
+    expect(numberToWord(25)).to.equal('twenty five');
+  });
 });
