@@ -14,7 +14,11 @@ describe('wordPuzzler', function() {
 });
 
 describe('numberToWord', function() {
-  it('will turn numbers into the word of the number', function() {
-    expect(wordPuzzler(4)).to.equal('four');
+  it('will turn single digit numbers into the word of the number', function() {
+    expect(numberToWord(4)).to.equal('four');
+  });
+
+  it('will turn teen digit numbers into the word of the number', function() {
+    expect(numberToWord(12)).to.equal('twelve');
   });
 });
