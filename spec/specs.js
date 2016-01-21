@@ -17,17 +17,4 @@ describe('numberToWord', function() {
   it('will turn single digit numbers into the word of the number', function() {
     expect(numberToWord(4)).to.equal('four');
   });
-
-  it('will turn teen digit numbers into the word of the number', function() {
-    expect(numberToWord(12)).to.equal('twelve');
-  });
-  it('will handle digits less than 100', function() {
-    expect(numberToWord(25)).to.equal('twenty five');
-  });
-  it('will handle digits less than 1000', function() {
-    expect(numberToWord(357)).to.equal('three hundred and fifty seven');
-  });
-  it('will ignore digits above 999', function() {
-    expect(numberToWord(1000)).to.equal(1000);
-  });
 });
